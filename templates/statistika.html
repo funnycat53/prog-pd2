@@ -1,0 +1,22 @@
+{% extends "index.html" %} 
+
+{% block saturs %}
+
+<h2>Statistika par ziņojumiem</h2>
+
+<table>
+    <tr>
+        <th>Vārds</th>
+        <th>Uzvārds</th>
+        <th>Ziņojumu skaits</th>
+    </tr>
+    {% for lietotajs in statistika %}
+    <tr>
+        <td>{{lietotajs[0]}}</td>
+        <td>{{lietotajs[1]}}</td>
+        <td>{{lietotajs[2]}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

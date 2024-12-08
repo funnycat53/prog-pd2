@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+
+{% block saturs %}
+
+<form method = "post" action = "/pievienot/zinojumu">
+    <h2>Ziņojumu dēlis</h2>
+    <select id = "lietotajs" name = "lietotajs">
+        {% for viens in lietotaji %}
+        <option value = "{{viens[2]}}">{{viens[0]}} {{viens[1]}} </option>
+        {% endfor %}
+    </select>
+    <input type="text" id="zinojums" name="zinojums" placeholder="Ievadiet ziņojumu">
+    <input type="submit" value="Pievienot ziņojumu!">
+
+    <table class="table">
+        <tr>
+            <th>Vārds</th>
+            <th>Uzvārds</th>
+            <th>Ziņojums</th>
+        </tr>
+        {% for viens in zina %}
+        <tr>
+        <td>{{viens[1]}}</td>
+        <td>{{viens[2]}}</td>
+        <td>{{viens[0]}}</td>
+        </tr>
+        {% endfor %}
+    
+{% endblock %}
